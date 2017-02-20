@@ -21,7 +21,7 @@ namespace TinyBus
 
         public async Task<T[]> Publish<T>(T message) where T: ITinyBusMessage<T>
         {
-            var handlers = _handlers.Get<T>().ToList();
+            var handlers = _handlers.Get<T>();
 
             var taskList = handlers.Select(handler => Task.Run(() => handler(message.Clone())));
 
