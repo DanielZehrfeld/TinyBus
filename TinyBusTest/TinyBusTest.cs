@@ -96,7 +96,7 @@ namespace TinyBusTest
 
             Assert.IsTrue(sw.Elapsed.Milliseconds < count * sleepMs);
 
-            Console.WriteLine("Processing took ms: " + sw.Elapsed.Milliseconds);
+            Console.WriteLine("Processing took ms: " + sw.Elapsed.TotalMilliseconds);
         }
     }
 }
